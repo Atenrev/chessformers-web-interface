@@ -68,6 +68,12 @@ export default function ChessformerBoard() {
     });
   }
 
+  function resetBoard() {
+    safeGameMutate((game) => {
+      game.reset();
+    });
+  }
+
   return (
     <div className="board-panel">
       <div>
@@ -79,7 +85,7 @@ export default function ChessformerBoard() {
         </div>
         <div className="mt-8">
           <button className="button button-warning mh-8" onClick={undoLastMove}>Undo</button>
-          <button className="button button-warning mh-8" onClick={undoLastMove}>Clear</button>
+          <button className="button button-warning mh-8" onClick={resetBoard}>Reset</button>
         </div>
       </div>
     </div>
